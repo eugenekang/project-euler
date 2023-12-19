@@ -82,8 +82,3 @@ class CustomEulerFunction:
             if len(list_result) == 1 and list_result[0] == 0:
                 return i
             i += 1"""
-
-
-
-
-

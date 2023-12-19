@@ -1,5 +1,5 @@
 *.iml
 __pycache__/
 *.py[co]
-src/build/*
+build/
 .DS_Store
