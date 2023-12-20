@@ -15,3 +15,8 @@ tests/unit/src
 	- support/
 		- test_custom_functions.py
 		- test_math.py
+
+Fresh Install/ New Working Env:
+1. Install latest python3
+2. Install make
+3. pip install pytest
