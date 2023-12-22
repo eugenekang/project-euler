@@ -1,6 +1,7 @@
 from logging import config
 import logging
 from math import sqrt
+from functools import reduce
 
 config.fileConfig("src/config/logger.ini")
 
@@ -96,26 +97,31 @@ class Math:
 
     def least_common_divisor(self, min: int, max: int):
         # AKA Least Common Multiple (LCM)
-        pf_dict = {}
-        for x in range(min, max):
+        prime_factors_dict = {}
+        for x in range(min, max+1):
             if x != 1:
-                pf_dict[x] = list(self.get_prime_factors(x))
+                prime_factors_dict[x] = list(self.get_prime_factors(x))
 
-        self.logger.info(pf_dict)
+        prime_set = []
+        for k, pfs in prime_factors_dict.items():
+            prime_set += pfs
+        prime_set = (set(prime_set))
+
         # For each prime less than range(max): check pf_dict for entry with the most times occurring in the list. Save prime to exponent.
-        prime_range = list(self.get_prime_factors(max))
         results = {}
-        for prime in prime_range:
+        for prime in prime_set:
             count = 0
-            for k, v in pf_dict:
-                self.logger.info(v)
-                """if prime in list(set):
-                    if set.count(prime) > count:
-                        count = set.count(prime)
-                else:
-                    pass"""
-            results[prime] = count
+            for k, v in prime_factors_dict.items():
+                if prime in v:
+                    if v.count(prime) > count:
+                        count = v.count(prime)
+                    else:
+                        pass
+                results[prime] = count
 
         # Multiply all values together.
-        self.logger.info(results)
-        return None
+        result = 1
+        for prime, power in results.items():
+            result *= prime**power
+
+        return result

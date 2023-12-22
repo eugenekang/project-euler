@@ -31,22 +31,22 @@ class EulerTestCases(unittest.TestCase):
         output = Euler().problem_4()
         expect(output).to.eq(485584)"""
 
-    """def test_euler_problem_5(self):
+    def test_euler_problem_5(self):
         # Not Tested, Long Runtime, Try Lambda or Map
         output = Euler().problem_5(
             lower=1,
             upper=20
         )
-        expect(output).to.eq(0)"""
+        expect(output).to.eq(232792560)
 
-    """def test_euler_problem_5_soln_example(self):
+    def test_euler_problem_5_soln_example(self):
         output = Euler().problem_5(
             lower=1,
             upper=10
         )
         expect(output).to.eq(2520)
 
-    def test_euler_problem_6_soln_example(self):
+    """def test_euler_problem_6_soln_example(self):
         output = Euler().problem_6(
             lower=1,
             upper=10

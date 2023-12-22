@@ -42,11 +42,11 @@ class Euler:
         )
         return problem_4_soln
 
-    def problem_5(self):
+    def problem_5(self, lower=1, upper=20):
         # Instruction: Smallest Multiple: smallest positive number that is evenly divisble by all numbers in range (1,20)
-        problem_5_soln = CustomEulerFunction().get_smallest_multiple_of_range(
-            lower=1,
-            upper=20
+        problem_5_soln = Math().least_common_divisor(
+            min=int(lower),
+            max=int(upper)
         )
         return problem_5_soln
 
